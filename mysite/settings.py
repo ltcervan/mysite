@@ -35,8 +35,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+## =================== added 'polls' =================
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,11 +81,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+## copied from the above documentation
+## ========= working on setting up mongo db username/password ============
+MONGO_URI = os.getenv('MONGO_URI')
+print(' ----------- mongo uri -----------------')
+print(MONGO_URI)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'default': {
+        }
 }
 
 
@@ -108,10 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
+# ============== Added a new timezone ==============
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
