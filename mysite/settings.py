@@ -83,12 +83,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 ## copied from the above documentation
 ## ========= working on setting up mongo db username/password ============
-MONGO_URI = os.getenv('MONGO_URI')
-print(' ----------- mongo uri -----------------')
-print(MONGO_URI)
+# MONGO_URI = os.getenv('MONGO_URI')
+# print(' ----------- mongo uri -----------------')
+# print(MONGO_URI)
 DATABASES = {
-        'default': {
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mysite',
+        'USER': 'layla',
+        'PASSWORD': 'Superuser2024!',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
 }
 
 
