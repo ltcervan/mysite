@@ -1,7 +1,6 @@
-from django.shortcuts import render
 # Where we create oour routes
 # Create your views here.
-from django.http import HttpResponse, Http404 #res.json- in javascript
+# from django.http import HttpResponse, Http404 #res.json- in javascript
 from django.shortcuts import render, get_object_or_404
 # from pymongo import MongoClient
 import os 
