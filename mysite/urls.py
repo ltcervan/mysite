@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from core import views as core_views
 from django.urls import path, include ## added the include
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
+    path('', core_views.home, name='home'),  # Project homepage
     path('polls/', include('polls.urls')), # added from polls/urls.py 
     path('admin/', admin.site.urls),
+    path('logout/', auth_views.LogoutView.as_view(next_page=''), name='logout')
+    
 ]
